@@ -1,9 +1,22 @@
 {
   "version": 2,
   "rewrites": [
+    { "source": "/api/create", "destination": "/api/index" },
+    { "source": "/health",     "destination": "/api/index" },
+    { "source": "/(.*)",       "destination": "/api/index" }
+  ],
+  "functions": {
+    "api/index.js": {
+      "memory": 256,
+      "maxDuration": 10
+    }
+  },
+  "headers": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index"
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
     }
   ]
 }

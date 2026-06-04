@@ -1,8 +1,10 @@
 {
   "name": "payback-redirect-proxy",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "dependencies": {
-    "@vercel/kv": "^3.0.0"
-  }
+  "description": "URL masking proxy for PayBack honeypot links — no database required",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
 }
